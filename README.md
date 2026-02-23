@@ -9,16 +9,28 @@
   - Dotenv
   - Winston
   - Swagger
+  - jest
+  - supertest
+  - jsonwebtoken (JWT)
+  - bcrypt
+  - helmet
+  - express-rate-limit
+  - cors
 - Then set up folders and start:
-  - Config of Winston and Sequelize, and write Dotenv
-  - Use logger if needed afterward
-  - Write models, their validations and global error handler in middleware, utils if needed
-  - Write simpler service layer
+  - Config Winston and Sequelize, and write Dotenv
+  - Use logger anywhere needed afterward
+  - Write models 
+  - Write utils if needed any time for any part
+  - Write simple service layer: Authentication logic (JWT, bcrypt) are written here
   - Write controller layer
+  - Write Middleware: global error handler, Security(validations, Authentication, Authorization, HTTP Headers, Rate Limiting, CORS)
   - Set up Swagger in docs
-  - Write router including: Swagger, validation
+  - Write router: Swagger and middleware are used here
   - Write app and server
   - First Postman testing  
   - Integrate external services 
+  - Add Unit Tests
+  - Add Integration Tests (Automated API Tests)+ Doc
+  - Set up CI/CD with GitHub Actions
   - Dockerize
-  - Final Postman testing document it
+  - Final Postman testing & document it
