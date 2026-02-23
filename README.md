@@ -5,12 +5,12 @@
   - Express
   - Sequelize
   - MySQL2
-  - Express-validator
   - Dotenv
   - Winston
   - Swagger
   - jest
   - supertest
+  - Express-validator 
   - jsonwebtoken (JWT)
   - bcrypt
   - helmet
