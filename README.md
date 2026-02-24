@@ -31,6 +31,7 @@
   - Integrate external services 
   - Add Unit Tests
   - Add Integration Tests (Automated API Tests)+ Doc
+  - Continuous Code Inspection: SonarQube
   - Set up CI/CD with GitHub Actions
   - Dockerize
   - Final Postman testing & document it

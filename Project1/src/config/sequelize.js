@@ -1,15 +1,21 @@
-const dotenv=require("dotenv");
+// Load environment variables from .env
+const dotenv = require("dotenv");
 dotenv.config();
-const {Sequelize}=require("sequelize");
 
-const sequelize= new Sequelize(
+// Import the Sequelize library
+const { Sequelize } = require("sequelize");
+
+// Create a new Sequelize instance (database connection)
+const sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
-    process.env.DB_PASSWORD,{
-        host:process.env.DB_HOST,
-        dialect:"mysql",
-        logging:false
+    process.env.DB_PASSWORD,
+    {
+        host: process.env.DB_HOST,
+        dialect: "mysql",
+        logging: false // Disable SQL query logging
     }
 );
 
-module.exports=sequelize;
+// Export the Sequelize instance for use in other modules
+module.exports = sequelize;
