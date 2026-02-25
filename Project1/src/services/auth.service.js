@@ -16,6 +16,7 @@ async function signup({name,email,password,role}){
         password:hashedPassword,
         role
     });
+    logger.info(`User with name ${name} and email ${email} signed up`);
     return user;
 }
 
@@ -24,14 +25,14 @@ async function login({email,password}){
     // Find the user
     const user=await User.findOne({where:{email}});
     if(!user){
-        logger.error(`Login failed: User with email ${email} does not exist`);
+        logger.warn(`Login failed: User with email ${email} does not exist`);
         notFoundError(`User with email ${email}`);
     }
 
     // If use exist, check if the password is correct for the user
     const isMatch= await bcrypt.compare(password, user.password);
     if(!isMatch){
-        logger.error(`Login failed: Invalid password`);
+        logger.warn(`Login failed for ${email}: Invalid password`);
         const err=new Error(`Invalid password`);
         err.statusCode=401;
         throw err;
