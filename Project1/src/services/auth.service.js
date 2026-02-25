@@ -5,6 +5,7 @@ const bcrypt=require("bcrypt");
 const {User}=require("../models");
 const jwt=require("jsonwebtoken");
 const logger=require("../config/winston");
+const notFoundError=require("../utils/notFoundError");
 
 // Sign Up, Create user but hash the password
 async function signup({name,email,password,role}){
@@ -24,14 +25,16 @@ async function login({email,password}){
     const user=await User.findOne({where:{email}});
     if(!user){
         logger.error(`Login failed: User with email ${email} does not exist`);
-        throw new Error(`User with email ${email} does not exist`);
+        notFoundError(`User with email ${email}`);
     }
 
     // If use exist, check if the password is correct for the user
     const isMatch= await bcrypt.compare(password, user.password);
     if(!isMatch){
         logger.error(`Login failed: Invalid password`);
-        throw new Error(`Invalid password`);
+        const err=new Error(`Invalid password`);
+        err.statusCode=401;
+        throw err;
     }
 
     // if the user is found and password is correct, user can have a token to use for each request
