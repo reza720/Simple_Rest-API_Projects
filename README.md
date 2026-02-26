@@ -1,7 +1,7 @@
-**These are small REST API projects with 1 or 2 Objects.** 
+## These are small REST API projects with 1 or 2 Objects. 
 
-**Steps To Do the Projects:**
-- Start with installation of dependencies:
+## Steps To Do the Projects:
+- **Start with installation of dependencies:**
   - Express
   - Sequelize
   - MySQL2
@@ -16,22 +16,23 @@
   - helmet
   - express-rate-limit
   - cors
-- Then set up folders and start:
+- **Then set up folders and start:**
   - Config Winston and Sequelize, and write Dotenv
-  - Use logger anywhere needed afterward
+  - Use logger in (Service layer for CRUD Operation Logs, Middleware, app.js and server.js)
   - Write models 
   - Write utils if needed any time for any part
-  - Write simple service layer: Authentication logic (JWT, bcrypt) are written here
+  - Write simple service layer: Authentication logic(signup & login with JWT & bcrypt) are written here
   - Write controller layer
   - Write Middleware: global error handler, Security(validations, Authentication, Authorization, HTTP Headers, Rate Limiting, CORS)
   - Set up Swagger in docs
   - Write router: Swagger and middleware are used here
   - Write app and server
+  - Change the schema of Databse: migration
   - First Postman testing  
   - Integrate external services 
   - Add Unit Tests
   - Add Integration Tests (Automated API Tests)+ Doc
-  - Continuous Code Inspection: SonarQube
   - Set up CI/CD with GitHub Actions
   - Dockerize
   - Final Postman testing & document it
+  - Continuous Code Inspection: SonarQube
