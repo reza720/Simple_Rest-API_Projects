@@ -46,4 +46,4 @@ class ItemController{
     }
 }
 
-module.exports=ItemService;
+module.exports=ItemController;
