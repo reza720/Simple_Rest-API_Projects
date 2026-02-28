@@ -6,10 +6,7 @@ class UserService{
     // Read Users, Only Admin use it
     async getUsers(options={}){
         const users=await User.findAll({where:options,attributes:{exclude:["password"]}});
-        if(users.length===0){
-            logger.warn(`No users found with filters of ${JSON.stringify(options)}`);
-            notFoundError("users");
-        }
+        if(users.length===0) notFoundError("users");
         return users;
     }
 
