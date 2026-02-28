@@ -24,15 +24,11 @@ class AuthService{
     async login({email,password}){
         // Find the user
         const user=await User.findOne({where:{email}});
-        if(!user){
-            logger.warn(`Login failed: User with email ${email} does not exist`);
-            notFoundError(`User with email ${email}`);
-        }
+        if(!user) notFoundError(`User with email ${email}`);
 
         // If use exist, check if the password is correct for the user
         const isMatch= await bcrypt.compare(password, user.password);
         if(!isMatch){
-            logger.warn(`Login failed for ${email}: Invalid password`);
             const err=new Error(`Invalid password`);
             err.statusCode=401;
             throw err;
