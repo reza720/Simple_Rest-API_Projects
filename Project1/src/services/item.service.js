@@ -13,20 +13,14 @@ class ItemService{
     // Read Items, Only Supports exact matches
     async getItems(options={}){
         const items=await Item.findAll({where:options});
-        if(items.length===0){
-            logger.warn(`No Item Found with filters : ${JSON.stringify(options)}`);
-            notFoundError('items');
-        }
+        if(items.length===0) notFoundError('items');
         return items;
     }
 
     // Update Item
     async updateItem(id,data){
         const item=await Item.findByPk(id);
-        if(!item){
-            logger.warn(`Item with Id ${id} not found for update`);
-            notFoundError("item");
-        }
+        if(!item) notFoundError("item");
         await item.update(data);
         logger.info(`Item with Id ${id} updated`);
         return item;
@@ -35,10 +29,7 @@ class ItemService{
     // Delete Item
     async deleteItem(id){
         const item=await Item.findByPk(id);
-        if(!item){
-            logger.warn(`Item with Id ${id} not found for delete`);
-            notFoundError("item");
-        }
+        if(!item) notFoundError("item");
         await item.destroy();
         logger.info(`Item with id ${id} deleted`);
         return {message:"Deleted"};
