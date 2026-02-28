@@ -1,7 +1,7 @@
 const {body}=require("express-validator");
 const errorHandler=require("../../utils/validationErrorHandler");
 
-const UserValidation={
+const userValidation={
     rules:[
         body("name")
             .trim()
@@ -19,4 +19,4 @@ const UserValidation={
     errorHandler
 };
 
-module.exports=UserValidation;
+module.exports=userValidation;
