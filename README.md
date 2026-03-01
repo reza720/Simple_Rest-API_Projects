@@ -19,20 +19,21 @@
 - **Then set up folders and start:**
   - Config Winston & Sequelize
   - write Dotenv
-  - Write models
-  - Write utils if needed any time for any part
-  - Write simple service layer: Authentication logic(signup & login with JWT & bcrypt) are written here
-  - Use logger: Request, service (business success), Auth failures, Global error handler, App start and database connection 
-  - Write controller layer
-  - Write Middleware: global error handler, Security(validations, Authentication, Authorization, HTTP Headers, Rate Limiting, CORS)
+  - Write Models
+  - Write Utils if needed any time for any part
+  - Write Simple service layer: Authentication logic(signup & login with JWT & bcrypt) are written here
+  - Use Logger: Request, service (business success), Auth failures, Global error handler, App start and database connection 
+  - Write Controller layer
+  - Write Middleware: globalErroHandler with failer logs, Security(validations, Authentication, Authorization)
   - Set up Swagger in docs
-  - Write router: Swagger and middleware are used here
-  - Write app and server
-  - First Postman testing  
+  - Write Router: use Swagger, middleware functions, middleware tools(specific rate limiter, Route-Specific CORS)
+  - Write app: use middlewares(requestLogger, Body parser, globalErrorHandler, Helmet, rate limiter, Cors)
+  - Write server
+  - First Postman testing 
+  - Add Unit Tests
+  - Add Integration Tests (Automated API Tests)+ Doc 
   - Integrate external services 
   - Change the schema of Databse: migration
-  - Add Unit Tests
-  - Add Integration Tests (Automated API Tests)+ Doc
   - Set up CI/CD with GitHub Actions
   - Dockerize
   - Final Postman testing & document it
