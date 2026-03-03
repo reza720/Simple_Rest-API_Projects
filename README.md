@@ -1,4 +1,4 @@
-## These are small REST API projects with 1 or 2 Objects. 
+## These are small REST API projects with 2 to 4 Objects. 
 
 ## Steps To Do the Projects:
 - **Start with installation of dependencies:**
@@ -18,11 +18,11 @@
   - cors
 - **Then set up folders and start:**
   - Config Winston & Sequelize
-  - write Dotenv
+  - write Dotenv & constants
   - Write Models
   - Write Utils if needed any time for any part
   - Write Simple service layer: Authentication logic(signup & login with JWT & bcrypt) are written here
-  - Use Logger: Request, service (business success), Auth failures, Global error handler, App start and database connection 
+  - Use Logger: Request, service (business success), Global error handler, App start and database connection 
   - Write Controller layer
   - Write Middleware: globalErroHandler with failer logs, Security(validations, Authentication, Authorization)
   - Set up Swagger in docs
