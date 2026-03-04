@@ -17,7 +17,7 @@
   - express-rate-limit
   - cors
 - **Then set up folders and start:**
-  - Config Winston & Sequelize
+  - Config Winston & Sequelize & Swagger
   - write Dotenv & constants
   - Write Models
   - Write Utils if needed any time for any part
@@ -25,7 +25,7 @@
   - Use Logger: Request, service (business success), Global error handler, Server Events (App starts/stops, Database connection) 
   - Write Controller layer
   - Write Middleware: globalErroHandler with failer logs, Security(validations, Authentication, Authorization)
-  - Write Router: use Swagger, middleware functions, middleware tools(specific rate limiter, Route-Specific CORS)
+  - Write Router: middleware functions, middleware tools(specific rate limiter, Route-Specific CORS)
   - Write app: mount swagger, middlewares(requestLogger, Body parser, globalErrorHandler, Helmet, rate limiter, Cors, hpp, xss-clean)
   - Write server
   - First Postman testing
