@@ -25,14 +25,14 @@
   - Use Logger: Request, service (business success), Global error handler, Server Events (App starts/stops, Database connection) 
   - Write Controller layer
   - Write Middleware: globalErroHandler with failer logs, Security(validations, Authentication, Authorization)
-  - Set up Swagger in docs
   - Write Router: use Swagger, middleware functions, middleware tools(specific rate limiter, Route-Specific CORS)
   - Write app: mount swagger, middlewares(requestLogger, Body parser, globalErrorHandler, Helmet, rate limiter, Cors, hpp, xss-clean)
   - Write server
-  - First Postman testing 
+  - First Postman testing
   - Add Unit Tests
   - Add Integration Tests (Automated API Tests)+ Doc 
-  - Integrate external services 
+  - Integrate external services
+  - Write API doc with Swagger: in docs, routers, mount in app.js 
   - Change the schema of Databse: migration
   - Set up CI/CD with GitHub Actions
   - Dockerize
