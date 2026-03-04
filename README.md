@@ -22,12 +22,12 @@
   - Write Models
   - Write Utils if needed any time for any part
   - Write Simple service layer: Authentication logic(signup & login with JWT & bcrypt) are written here
-  - Use Logger: Request, service (business success), Global error handler, App start and database connection 
+  - Use Logger: Request, service (business success), Global error handler, Server Events (App starts/stops, Database connection) 
   - Write Controller layer
   - Write Middleware: globalErroHandler with failer logs, Security(validations, Authentication, Authorization)
   - Set up Swagger in docs
   - Write Router: use Swagger, middleware functions, middleware tools(specific rate limiter, Route-Specific CORS)
-  - Write app: use middlewares(requestLogger, Body parser, globalErrorHandler, Helmet, rate limiter, Cors)
+  - Write app: mount swagger, middlewares(requestLogger, Body parser, globalErrorHandler, Helmet, rate limiter, Cors, hpp, xss-clean)
   - Write server
   - First Postman testing 
   - Add Unit Tests
