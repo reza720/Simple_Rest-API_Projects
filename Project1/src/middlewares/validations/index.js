@@ -1,4 +1,4 @@
-const itemValidation=require("./item.validation");
-const userValidation=require("./user.validation");
+const ItemValidation=require("./item.validation");
+const UserValidation=require("./user.validation");
 
-module.exports={itemValidation,userValidation};
+module.exports={ItemValidation,UserValidation};
