@@ -16,25 +16,32 @@
   - helmet
   - express-rate-limit
   - cors
-- **Then set up folders and start:**
-  - Config Winston & Sequelize & Swagger
+
+- **Setup Layers & Add Logs / Security:**
+  - Config Winston & Sequelize
   - write Dotenv & constants
   - Write Models
   - Write Utils if needed any time for any part
-  - Write Simple service layer: Authentication logic(signup & login with JWT & bcrypt) are written here
-  - Use Logger: Request, service (business success), Global error handler, Server Events (App starts/stops, Database connection) 
+  - Write Simple service layer: + signup & login with JWT & bcrypt/Argon2 
+  - Use Logger: Business success: in service, Failer: in globalErrorHandler, Server Events: in app and server 
   - Write Controller layer
   - Write Middleware: globalErroHandler with failer logs, Security(validations, Authentication, Authorization)
   - Write Router: middleware functions, middleware tools(specific rate limiter, Route-Specific CORS)
-  - Write app: mount swagger, middlewares(requestLogger, Body parser, globalErrorHandler, Helmet, rate limiter, Cors, hpp, xss-clean)
+  - Write app: middlewares(Body parser, globalErrorHandler, Helmet, rate limiter, Cors, hpp)
   - Write server
-  - First Postman testing
-  - Add Unit Tests
-  - Add Integration Tests (Automated API Tests)+ Doc 
-  - Integrate external services
-  - Write API doc with Swagger: in docs, routers, mount in app.js 
-  - Change the schema of Databse: migration
-  - Set up CI/CD with GitHub Actions
-  - Dockerize
-  - Final Postman testing & document it
-  - Continuous Code Inspection: SonarQube
+
+  
+- **Apply Testing:**
+  - Unit Testing (jest)
+  - API Manual Testing (Postman)
+  - API Automated Testing (Jest + Supertest)
+  - Performance / Load Testing: K6
+  - Security Testing: Dependencies(npm audit),auth,authorization,validation(Jest+Supertest),vulnerabilities(OWASP ZAP). 
+  - Debugg: VS Code Debugger / console.log
+
+- **Add More Things**
+  - API Doc: Swagger
+  - External Services:
+  - Migration: sequelize-cli
+  - Setup CI/CD Piplines: GitHub Actions
+  - Containerize: Docker
