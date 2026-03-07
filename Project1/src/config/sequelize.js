@@ -1,17 +1,13 @@
-// Load environment variables from .env
-const dotenv = require("dotenv");
-dotenv.config();
-
 // Import the Sequelize library
 const { Sequelize } = require("sequelize");
 
 // Create a new Sequelize instance (database connection)
 const sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USER,
-    process.env.DB_PASSWORD,
+    'project1',
+    'root',
+    'root',
     {
-        host: process.env.DB_HOST,
+        host: "localhost",
         dialect: "mysql",
         logging: false // Disable SQL query logging
     }

@@ -1,6 +1,3 @@
-const dotenv=require("dotenv");
-dotenv.config();
-
 const bcrypt=require("bcrypt");
 const {User}=require("../models");
 const jwt=require("jsonwebtoken");
@@ -37,7 +34,7 @@ class AuthService{
         // if the user is found and password is correct, user can have a token to use for each request
         const token=jwt.sign(
             {id:user.id, name:user.name, email:user.email, role:user.role},
-            process.env.JWT_SECRET || "secretKey",
+            "secretKey",
             {expiresIn:"1h"}
         );
         logger.info(`User with email ${email} successfully logged in`);

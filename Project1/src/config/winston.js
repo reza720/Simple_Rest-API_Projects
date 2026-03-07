@@ -1,7 +1,3 @@
-// Load environment variables from .env
-const dotenv = require("dotenv");
-dotenv.config();
-
 // Import necessary Node.js modules
 const path = require("path");
 const fs = require("fs");
@@ -21,7 +17,7 @@ const logFormat = winston.format.combine(
 
 // Create the Winston logger instance
 const logger = winston.createLogger({
-    level: process.env.LEVEL_LOGGER || "info",
+    level: "info",
     format: logFormat,
     transports: [
         // Log to console with colorized and simple format
@@ -35,7 +31,7 @@ const logger = winston.createLogger({
         // Log all messages to a combined log file
         new winston.transports.File({
             filename: path.join(logs, "allLogs.log"),
-            level: process.env.LEVEL_LOGGER || "info"
+            level:"info"
         }),
 
         // Log only errors to a separate error log file
