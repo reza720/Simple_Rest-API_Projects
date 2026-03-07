@@ -7,19 +7,16 @@ const winston = require("winston");
 const logs = path.join(process.cwd(), "logs");
 fs.mkdirSync(logs, { recursive: true });
 
-// Define the log format for structured logging
-const logFormat = winston.format.combine(
-    winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
-    winston.format.errors({ stack: true }),
-    winston.format.splat(),
-    winston.format.json()
-);
-
 // Create the Winston logger instance
 const logger = winston.createLogger({
     level: "info",
-    format: logFormat,
-    transports: [
+    format: winston.format.combine(
+        winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
+        winston.format.errors({ stack: true }),
+        winston.format.splat(),
+        winston.format.json()
+    ),
+    transports:[
         // Log to console with colorized and simple format
         new winston.transports.Console({
             format: winston.format.combine(
