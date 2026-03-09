@@ -24,7 +24,7 @@
   - Write Utils if needed any time for any part
   - Write Simple service layer: + signup & login with JWT & bcrypt/Argon2 
   - Use Logger: Business success: in service, Failer: in globalErrorHandler, Server Events: in app and server 
-  - Write Controller layer
+  - Write Controller/Handler layer
   - Write Middleware: globalErroHandler with failer logs, Security(validations, Authentication, Authorization)
   - Write Router: middleware functions, middleware tools(specific rate limiter, Route-Specific CORS(prod only))
   - Write app: Mount routers, middlewares(Body parser, globalErrorHandler, 404 of route, Helmet, rate limiter, Cors, hpp)
