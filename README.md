@@ -5,17 +5,17 @@
   - Express
   - Sequelize
   - MySQL2
-  - Dotenv
   - Winston
-  - Swagger
-  - jest
-  - supertest
   - Express-validator 
   - jsonwebtoken (JWT)
-  - bcrypt
+  - bcrypt/Argon2
   - helmet
   - express-rate-limit
   - cors
+  - Dotenv
+  - Swagger
+  - jest
+  - supertest
 
 - **Setup Layers & Add Logs / Security:**
   - Config Winston & Sequelize
