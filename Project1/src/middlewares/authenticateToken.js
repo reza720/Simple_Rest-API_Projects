@@ -1,6 +1,3 @@
-const dotenv=require("dotenv");
-dotenv.config();
-
 const jwt=require("jsonwebtoken");
 const logger=require("../config/winston");
 
@@ -22,7 +19,7 @@ const AuthenticateToken=(req,res,next)=>{
 
         const token=authHeader.split(" ")[1];
 
-        const decode=jwt.verify(token, process.env.JWT_SECRET || "secretKey");
+        const decode=jwt.verify(token,"secretKey");
         req.user=decode;
         next();
     }
