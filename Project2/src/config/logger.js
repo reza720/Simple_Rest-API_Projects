@@ -2,7 +2,8 @@ const winston=require("winston");
 const fs=require("fs");
 const path=require("path");
 
-const logs=path.join(process.cwd(),"logs");
+const rootDir=path.resolve(__dirname, "../../");
+const logs=path.join(rootDir,"logs");
 fs.mkdirSync(logs,{recursive:true});
 
 const logger=winston.createLogger({
