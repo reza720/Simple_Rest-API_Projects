@@ -1,15 +1,15 @@
-const express=require("express");
-const router=express.Router();
+const express = require("express");
+const router = express.Router();
 
-const {PropertyHandler}=require("../handlers");
-const validate=require("../utils/validate");
-const PropertyRules=require("../middlewares/validations/property.validation");
-const AuthenticateToken=require("../middlewares/authenticateToken");
+const { PropertyHandler } = require("../handlers");
+const validate = require("../utils/validate");
+const PropertyRules = require("../middlewares/validations/property.validation");
+const AuthenticateToken = require("../middlewares/authenticateToken");
 
 router.post(
-    "/", 
+    "/",
     AuthenticateToken,
-    PropertyRules,
+    ...PropertyRules,  
     validate,
     PropertyHandler.createProperty
 );
@@ -23,7 +23,7 @@ router.get(
 router.put(
     "/:id",
     AuthenticateToken,
-    PropertyRules,
+    ...PropertyRules,
     validate,
     PropertyHandler.updateProperty
 );
@@ -34,6 +34,4 @@ router.delete(
     PropertyHandler.deleteProperty
 );
 
-module.exports=router;
-
-
+module.exports = router;

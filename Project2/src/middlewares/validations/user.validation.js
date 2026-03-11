@@ -1,6 +1,7 @@
-const {body}=require("express-validator");
+const { body } = require("express-validator");
 
-const SignupRules=[
+// Signup rules
+const SignupRules = [
     body("email")
         .notEmpty().withMessage("Email is required")
         .isEmail().withMessage("Valid email is required"),
@@ -13,7 +14,8 @@ const SignupRules=[
         .isLength({ min: 5, max: 100 }).withMessage("Password must be between 5 and 100 characters")
 ];
 
-const LoginRules=[
+// Login rules
+const LoginRules = [
     body("email")
         .notEmpty().withMessage("Email is required")
         .isEmail().withMessage("Valid email is required"),
@@ -22,4 +24,4 @@ const LoginRules=[
         .isLength({ min: 5, max: 100 }).withMessage("Password must be between 5 and 100 characters")
 ];
 
-module.exports={SignupRules,LoginRules};
+module.exports = { SignupRules, LoginRules }; 

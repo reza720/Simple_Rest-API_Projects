@@ -20,22 +20,25 @@ const loginLimiter = rateLimit({
     message: "Try again in 5 minutes"
 });
 
+// Signup
 router.post(
     "/auth/signup",
     signupLimiter,
-    SignupRules,
+    ...SignupRules, 
     validate,
     AuthHandler.signup
 );
 
+// Login
 router.post(
     "/auth/login",
     loginLimiter,
-    LoginRules,
+    ...LoginRules, 
     validate,
     AuthHandler.login
 );
 
+// Get all users (Admin only)
 router.get(
     "/",
     authenticateToken,
@@ -43,14 +46,16 @@ router.get(
     UserHandler.getUsers
 );
 
+// Update own user
 router.put(
     "/me",
     authenticateToken,
-    SignupRules,
+    ...SignupRules,
     validate,
     UserHandler.updateUser
 );
 
+// Delete own user
 router.delete(
     "/me",
     authenticateToken,

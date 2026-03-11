@@ -3,7 +3,7 @@ const helmet=require("helmet");
 const rateLimit=require("express-rate-limit");
 const cors=require("cors");
 const hpp=require("hpp");
-const globalErrorHandler=require("../src/middlewares/globalErrorHandler");
+const globalErrorHandler=require("./middlewares/globalErrorHandler");
 
 const app=express();
 const router=require("./routers");
